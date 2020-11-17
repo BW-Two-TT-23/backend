@@ -4,13 +4,14 @@ exports.up = function(knex) {
           tbl.increments()
           tbl.string('username', 128).notNullable()
           tbl.string('password', 128).notNullable()
+          tbl.string('email', 128).notNullable()
           tbl.integer('u_id')
           tbl.boolean('isTrainer')
           .notNullable()
           .defaultTo(false)
       })
 
-      .createTable('classes', tbl => {
+      .createTable('class', tbl => {
           tbl.increments()
           tbl.string('name', 128).notNullable()
           tbl.string('duration', 50)

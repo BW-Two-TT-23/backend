@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 const Users = require('../models/user-model');
 
-const isValid = require('../users/user-service');
+const {isValid} = require('../users/user-service');
 
 const db = require('../data/db-config');
 
@@ -20,7 +20,7 @@ router.post('/signup', validateUser, doesUserExist, (req, res) => {
         
         userInfo.password = hash;
 
-        Users.add(userInfo)
+        Users.create(userInfo)
             .then(user => {
                 res.status(201).json({ data: user });
             })

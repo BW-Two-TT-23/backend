@@ -7,7 +7,7 @@ const classRouter = require('../class/class-router');
 
 router.use('/auth', authRouter);
 router.use('/users', userRouter);
-router.use('/class', classRouter);
+router.use('/classes', classRouter);
 
 
 module.exports = router;

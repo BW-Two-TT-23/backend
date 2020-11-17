@@ -6,6 +6,7 @@ const cors = require('cors')
 
 const authRouter = require('./auth/auth-router')
 const userRouter = require('./users/user-router')
+const classRouter = require('./class/class-router')
 
 
 const server = express();
@@ -18,5 +19,6 @@ server.get('/test', (req, res) => { res.status(200).json({message: 'server runni
 
 server.use('/api/auth', authRouter)
 server.use('/api/user', userRouter)
+server.use('/api/classes', classRouter)
 
 module.exports = server;
