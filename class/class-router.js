@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const classDb = require('./class-model');
+const classDb = require('../models/class-model');
 
 
 router.get('/', (req, res) => {

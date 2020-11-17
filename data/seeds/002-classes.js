@@ -1,12 +1,10 @@
 exports.seed = function(knex) {
   
-  return knex('classes')
-    .truncate()
-    .then(function () {
+  
       
       return knex('classes').insert([
-        {id: 1, title: 'Yoga', description:'A calm, slower paced program', type:'Yoga', trainer_id:1},
-        {id: 2, title: 'Cross Fit', description:'Intensive Training', type:'Multiple training exercises', trainer_id:3}
+        {name: "Yoga in the park", type: "Yoga", starttime: "8am", duration: "30 min", intensitylevel: 1, location: "Boysen Park", numberofattendees: 5, maxclasssize: 10},
+        {name: "Crossfit Madness", type: "crossfit", starttime: "9am", duration: "60 min", intensitylevel: 5, location: "Gym", numberofattendees: 5, maxclasssize: 15}
       ]);
-    });
+   
 };
