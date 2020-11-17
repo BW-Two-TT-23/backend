@@ -4,8 +4,8 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const cors = require('cors')
 
-// const projectRouter = require('./router/project-router')
-// const taskRouter = require('./router/task-router')
+const authRouter = require('./auth/auth-router')
+const userRouter = require('./users/user-router')
 
 
 const server = express();
@@ -16,7 +16,7 @@ server.use(express.json())
 
 server.get('/test', (req, res) => { res.status(200).json({message: 'server running ' }) })
 
-// server.use('/api/projects', projectRouter)
-// server.use('/api/tasks', taskRouter)
+server.use('/api/auth', authRouter)
+server.use('/api/user', userRouter)
 
 module.exports = server;

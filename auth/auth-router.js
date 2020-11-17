@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 
 const router = require('express').Router();
 
-const Instructors = require('../models/instructor-model');
+const Users = require('../models/user-model');
 
 const isValid = require('../users/user-service');
 
