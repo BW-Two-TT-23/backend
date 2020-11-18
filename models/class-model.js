@@ -1,5 +1,5 @@
 
-const dbConfig=require('../dbConfig.js')
+const dbConfig=require('../data/db-config')
 const db = dbConfig.dbEnv
 
 
