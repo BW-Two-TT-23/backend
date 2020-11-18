@@ -1,7 +1,5 @@
 
-const dbConfig=require('../data/db-config')
-const db = dbConfig.dbEnv
-
+const db = require('../data/db-config');
 
 module.exports = {
     findClasses,
@@ -18,32 +16,32 @@ module.exports = {
 // Select * from cohorts;
 
 function findClasses() {
-    return db('Classes')
+    return db('class')
 
 }
 
 
 function findClassById(id) {
-    return db('Classes').where({id}).first()
+    return db('class').where({id}).first()
 
 }
 
 function findClassesByCatId(category_id) {
-    return db('Classes').where({category_id}).first()
+    return db('class').where({category_id}).first()
 
 }
 
 function addClass(something) {
-    return db('Classes').insert(something)
+    return db('class').insert(something)
 
 }
 
 function removeClass(id) {
-    return db('Classes').where({id}).del()
+    return db('class').where({id}).del()
 
 }
 function updateClass(id, changes) {
-    return db('Classes').where({id}).update(changes);
+    return db('class').where({id}).update(changes);
 
 }
 
