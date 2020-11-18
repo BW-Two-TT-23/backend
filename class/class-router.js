@@ -57,6 +57,13 @@ router.get('/categories/:categoryId',  async (req, res) => {
   });
 
   router.post('/',  /*async*/ (req, res) => {
+    const headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
+      };
+      res.set(headers);
+      
       Classes.addClass(req.body)
       .then(classe => {
           res.status(201).json(classe);
