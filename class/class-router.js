@@ -1,4 +1,4 @@
-const server = require('../server')
+
 const router = require('express').Router();
 const Classes = require('../models/class-model');
 // const restricted = require('../auth/auth-middleware');
