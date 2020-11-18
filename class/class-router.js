@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
   });
 
 //get classes by category id
-router.get('/categories/:categoryId', restricted, async (req, res) => {
+router.get('/categories/:categoryId',  async (req, res) => {
 
     try {
       const classe = await Classes.findClassesByCatId(req.params.categoryId)
