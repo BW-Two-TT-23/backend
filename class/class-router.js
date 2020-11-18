@@ -35,8 +35,8 @@ router.post('/', restricted, async (req, res) => {
 
     try {
         console.log(req.body)
-      const class = await classDb.addClass(req.body)
-      res.status(200).json(class);
+      const classe = await classDb.addClass(req.body)
+      res.status(200).json(classe);
     } 
     catch (error) {
       // log error to server
@@ -50,9 +50,9 @@ router.post('/', restricted, async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
     
-    const class = await classDb.updateClass(req.params.id, req.body);
+    const classe = await classDb.updateClass(req.params.id, req.body);
 
-      res.status(200).json(class);
+      res.status(200).json(classe);
     } catch (error) {
       // log error to server
       console.log(error);
@@ -64,7 +64,7 @@ router.put('/:id', async (req, res) => {
 
   router.delete('/:id', async (req, res) => {
     try {
-        const class = await classDb.removeClass(req.params.id);
+        const classe = await classDb.removeClass(req.params.id);
       res.status(200).json(classe);
     } catch (error) {
       // log error to server
