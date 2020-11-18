@@ -63,7 +63,7 @@ router.get('/categories/:categoryId',  async (req, res) => {
       const classe = await Classes.addClass(req.body)
 
 
-      res.status(200).json(classe);
+      res.status(200).json(res.body);
     } 
     catch (error) {
       // log error to server
