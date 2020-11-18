@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = (instructor) => {
+module.exports = (user) => {
     const payload = {
-        subject: instructor.instructorId,
-        instructorname: instructor.instructorname
+        subject: user.userId,
+        username: user.username
     }
     const secret = "super secure secret";
 
