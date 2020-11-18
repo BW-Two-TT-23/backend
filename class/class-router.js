@@ -56,22 +56,26 @@ router.get('/categories/:categoryId',  async (req, res) => {
     }
   });
 
-  router.post('/',  async (req, res) => {
+  router.post('/',  /*async*/ (req, res) => {
+      Classes.addClass(req.body)
+      .then(classe => {
+          res.status(201).json(classe);
+      })
 
-    try {
-        console.log(req.body)
-      const classe = await Classes.addClass(req.body)
+    // try {
+    //     console.log(req.body)
+    //   const classe = await Classes.addClass(req.body)
 
-
-      res.status(200).json(res.body);
-    } 
-    catch (error) {
-      // log error to server
-      console.log(error);
-      res.status(500).json({
-        message: 'Error adding the class to the database',
-      });
-    }
+    //     console.log(classe)
+    //   res.status(200).json(classe);
+    // } 
+    // catch (error) {
+    //   // log error to server
+    //   console.log(error);
+    //   res.status(500).json({
+    //     message: 'Error adding the class to the database',
+    //   });
+    // }
   });
 
   router.delete('/:id', async (req, res) => {
