@@ -66,7 +66,9 @@ router.get('/categories/:categoryId',  async (req, res) => {
       
       Classes.addClass(req.body)
       .then(classe => {
+        console.log(classe);
           res.status(201).json(classe);
+          
       })
 
     // try {
