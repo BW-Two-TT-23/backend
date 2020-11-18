@@ -32,6 +32,7 @@ function findClassesByCatId(category_id) {
 }
 
 function addClass(something) {
+  console.log(something)
     return db('class').insert(something)
 
 }
