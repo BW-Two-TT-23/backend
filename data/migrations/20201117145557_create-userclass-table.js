@@ -24,12 +24,7 @@ exports.up = function(knex) {
           .notNullable()
           .defaultTo(false)
           
-            .unsigned()
-            .notNullable()
-            .references('id')
-            .inTable('classes')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE')
+            
       } )
 
   };
