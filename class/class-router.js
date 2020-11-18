@@ -1,11 +1,11 @@
 const server = require('../server')
 const router = require('express').Router();
 const Classes = require('../models/class-model');
-const restricted = require('../auth/auth-middleware');
+// const restricted = require('../auth/auth-middleware');
 
 
 
-router.get('/', restricted, async (req, res) => {
+router.get('/', async (req, res) => {
 
     try {
       const classes = await Classes.findClasses()
@@ -39,7 +39,7 @@ router.get('/categories/:categoryId', restricted, async (req, res) => {
   });
 
 //get class by id
-  router.get('/:classId', restricted, async (req, res) => {
+  router.get('/:classId',  async (req, res) => {
 
     try {
       const classe = await Classes.findClassById(req.params.classId)
@@ -56,7 +56,7 @@ router.get('/categories/:categoryId', restricted, async (req, res) => {
     }
   });
 
-  router.post('/', restricted, async (req, res) => {
+  router.post('/',  async (req, res) => {
 
     try {
         console.log(req.body)
