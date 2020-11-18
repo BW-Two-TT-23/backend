@@ -20,7 +20,7 @@ exports.up = function(knex) {
           tbl.string('type', 30)
           tbl.integer('intensitylevel')
           tbl.integer('maxclasssize')
-          tbl.integer('numberofattendees')
+          tbl.boolean('numberofattendees')
           .notNullable()
           .defaultTo(false)
           
