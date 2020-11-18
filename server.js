@@ -14,6 +14,13 @@ server.use(helmet())
 server.use(morgan())
 server.use(cors())
 server.use(express.json())
+server.use((req, res, next) => {
+    res.header({ "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers":
+      "Origin, X-Requested-With, Content-Type, Accept" });
+    next();
+  });
+  
 
 server.get('/test', (req, res) => { res.status(200).json({message: 'server running ' }) })
 
